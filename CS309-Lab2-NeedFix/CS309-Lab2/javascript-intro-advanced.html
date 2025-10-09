@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Complete JavaScript Course</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        .code-editor {
+            font-family: 'Courier New', monospace;
+            min-height: 150px;
+        }
+        .output-box {
+            min-height: 100px;
+            background-color: #1e293b;
+            color: #f8fafc;
+        }
+        .topic-section {
+            scroll-margin-top: 80px;
+        }
+        .nav-link:hover {
+            border-bottom: 2px solid #fbbf24;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./assets/photo.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-gray-900 bg-opacity-90 backdrop-blur-sm shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="js-logo.png" alt="JavaScript Logo" class="w-10 h-10">
+                <h1 class="text-xl md:text-2xl font-bold text-yellow-400">JavaScript<span class="text-white">Course</span></h1>
+            </div>
+            <nav>
+                <ul class=" space-x-6">
+                    <li><a href="#intro" class="nav-link hover:text-yellow-400 transition">Intro</a></li>
+                    <li><a href="#fundamentals" class="nav-link hover:text-yellow-400 transition">Fundamentals</a></li>
+                    <li><a href="#advanced" class="nav-link hover:text-yellow-400 transition">Advanced</a></li>
+                    <li><a href="#practice" class="nav-link hover:text-yellow-400 transition">Practice</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg pt-32 pb-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Complete <span class="text-yellow-400">JavaScript</span> Course</h1>
+            <p class="text-xl max-w-2xl mx-auto mb-8">From fundamentals to advanced concepts - master JavaScript with interactive examples.</p>
+            <div class="flex gap-4 flex-wrap">
+                <a href="#fundamentals" class="btn btn-primary bg-yellow-500 hover:bg-yellow-600 border-none text-gray-900 font-bold px-6 py-3 rounded-lg">Start with Fundamentals</a>
+                <a href="#advanced" class="btn btn-outline btn-warning px-6 py-3 rounded-lg">Jump to Advanced</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section id="intro" class="py-16 topic-section">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">What is JavaScript?</h2>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-lg mb-6">JavaScript is the programming language of the web. It makes websites interactive and dynamic, allowing you to:</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span>Change HTML content and attributes</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span>Modify CSS styles dynamically</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span>Respond to user interactions (clicks, inputs, etc.)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span>Validate forms and process data</span>
+                        </li>
+                    </ul>
+                    <div class="alert alert-info">
+                        <i class="fas fa-lightbulb text-blue-500 mr-2"></i>
+                        <span>JavaScript is not the same as Java. Despite the similar name, they are completely different programming languages!</span>
+                    </div>
+                </div>
+                <div class="bg-gray-800 rounded-xl p-6">
+                    <h3 class="text-xl font-bold mb-4">Try it yourself:</h3>
+                    <p class="mb-4">Click the button below to see JavaScript in action:</p>
+                    <button id="demoButton" class="btn btn-secondary mb-4">Click Me!</button>
+                    <p id="demoOutput" class="text-yellow-400 font-medium">This text will change when you click the button.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Overview -->
+    <section class="py-16 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Course Overview</h2>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="card bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl text-yellow-400">Fundamentals</h3>
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-center">
+                                <i class="fas fa-circle text-xs text-yellow-400 mr-3"></i>
+                                <span>Variables</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-circle text-xs text-yellow-400 mr-3"></i>
+                                <span>Data Types</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-circle text-xs text-yellow-400 mr-3"></i>
+                                <span>Operators</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-circle text-xs text-yellow-400 mr-3"></i>
+                                <span>Conditionals</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-circle text-xs text-yellow-400 mr-3"></i>
+                                <span>Loops</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-circle text-xs text-yellow-400 mr-3"></i>
+                                <span>Functions</span>
+                            </li>
+                        </ul>
+                        <div class="card-actions justify-end">
+                            <a href="#fundamentals" class="btn btn-primary bg-yellow-500 hover:bg-yellow-600 border-none">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl text-yellow-400">Advanced Concepts</h3>
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-center">
+                                <i class="fas fa-circle text-xs text-yellow-400 mr-3"></i>
+                                <span>Arrays and Array Methods</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-circle text-xs text-yellow-400 mr-3"></i>
+                                <span>Array Iteration Methods (map, filter, reduce)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-circle text-xs text-yellow-400 mr-3"></i>
+                                <span>Objects and Object Methods</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-circle text-xs text-yellow-400 mr-3"></i>
+                                <span>Destructuring</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-circle text-xs text-yellow-400 mr-3"></i>
+                                <span>Spread and Rest Operators</span>
+                            </li>
+                        </ul>
+                        <div class="card-actions justify-end">
+                            <a href="#advanced" class="btn btn-outline btn-warning">Jump to Advanced</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FUNDAMENTALS SECTION -->
+    <section id="fundamentals" class="py-16 topic-section">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">JavaScript Fundamentals</h2>
+                <p class="max-w-2xl mx-auto text-gray-300">Master these core concepts to build a strong foundation in JavaScript programming.</p>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+
+            <!-- Topic 1: Variables -->
+            <div class="topic-section mb-16" id="variables">
+                <div class="card bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl text-yellow-400">
+                            <span class="badge badge-primary mr-2">1</span> Variables
+                        </h3>
+                        <p class="mb-4">Variables are containers for storing data values. JavaScript uses three keywords to declare variables:</p>
+                        <ul class="list-disc pl-6 mb-4 space-y-2">
+                            <li><code class="bg-gray-700 px-2 py-1 rounded">var</code> - older way to declare variables (avoid in modern JavaScript)</li>
+                            <li><code class="bg-gray-700 px-2 py-1 rounded">let</code> - declares a block-scoped variable that can be changed</li>
+                            <li><code class="bg-gray-700 px-2 py-1 rounded">const</code> - declares a block-scoped constant that cannot be reassigned</li>
+                        </ul>
+                        
+                        <div class="mockup-code bg-gray-900 mb-6">
+                            <pre data-prefix="1"><code>let name = "Alice";</code></pre>
+                            <pre data-prefix="2"><code>const age = 25;</code></pre>
+                            <pre data-prefix="3"><code>var city = "New York"; // Older method</code></pre>
+                            <pre data-prefix="4"><code></code></pre>
+                            <pre data-prefix="5"><code>// Using variables</code></pre>
+                            <pre data-prefix="6"><code>console.log("Hello, " + name); // Output: Hello, Alice</code></pre>
+                        </div>
+                        
+                        <div class="alert alert-warning mb-4">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Always use <code class="bg-gray-700 px-1 rounded">let</code> or <code class="bg-gray-700 px-1 rounded">const</code> instead of <code class="bg-gray-700 px-1 rounded">var</code> in modern JavaScript!</span>
+                        </div>
+                        
+                        <div class="divider">Try it yourself</div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold mb-2">Code Editor:</h4>
+                                <textarea id="variablesEditor" class="code-editor w-full p-4 bg-gray-900 text-green-400 rounded-lg" placeholder="// Try declaring your own variables here&#10;// Example:&#10;// let favoriteColor = &quot;blue&quot;;&#10;// const birthYear = 1990;&#10;// console.log(&quot;My favorite color is &quot; + favoriteColor);">let firstName = "John";
+let lastName = "Doe";
+const birthYear = 1995;
+
+// Calculate age (approximate)
+let currentYear = 2025;
+let age = currentYear - birthYear;
+
+console.log(firstName + " " + lastName + " is " + age + " years old.");</textarea>
+                                <button onclick="runCode()" class="btn btn-primary mt-2 bg-yellow-500 hover:bg-yellow-600 border-none">Run Code</button>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2">Output:</h4>
+                                <div id="variablesOutput" class="output-box p-4 rounded-lg overflow-auto">
+                                    Click "Run Code" to see the output here
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 2: Data Types -->
+            <div class="topic-section mb-16" id="datatypes">
+                <div class="card bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl text-yellow-400">
+                            <span class="badge badge-primary mr-2">2</span> Data Types
+                        </h3>
+                        <p class="mb-4">JavaScript has several data types to represent different kinds of values:</p>
+                        <div class="overflow-x-auto mb-6">
+                            <table class="table w-full">
+                                <thead>
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>String</td>
+                                        <td>Text values enclosed in quotes</td>
+                                        <td><code class="bg-gray-700 px-2 py-1 rounded">"Hello"</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Number</td>
+                                        <td>Numeric values (integers or decimals)</td>
+                                        <td><code class="bg-gray-700 px-2 py-1 rounded">42, 3.14</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Boolean</td>
+                                        <td>Logical values: true or false</td>
+                                        <td><code class="bg-gray-700 px-2 py-1 rounded">true, false</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Array</td>
+                                        <td>Ordered collection of values</td>
+                                        <td><code class="bg-gray-700 px-2 py-1 rounded">[1, 2, 3]</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Object</td>
+                                        <td>Collection of key-value pairs</td>
+                                        <td><code class="bg-gray-700 px-2 py-1 rounded">{name: "John"}</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="mockup-code bg-gray-900 mb-6">
+                            <pre data-prefix="1"><code>// Different data types</code></pre>
+                            <pre data-prefix="2"><code>let name = "Alice";           // String</code></pre>
+                            <pre data-prefix="3"><code>let age = 30;               // Number</code></pre>
+                            <pre data-prefix="4"><code>let isStudent = true;       // Boolean</code></pre>
+                            <pre data-prefix="5"><code>let hobbies = ["reading", "coding"]; // Array</code></pre>
+                            <pre data-prefix="6"><code>let person = {              // Object</code></pre>
+                            <pre data-prefix="7"><code>  name: "Bob",</code></pre>
+                            <pre data-prefix="8"><code>  age: 25</code></pre>
+                            <pre data-prefix="9"><code>};</code></pre>
+                        </div>
+                        
+                        <div class="divider">Try it yourself</div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold mb-2">Code Editor:</h4>
+                                <textarea id="datatypesEditor" class="code-editor w-full p-4 bg-gray-900 text-green-400 rounded-lg" placeholder="// Try creating different data types&#10;// Example:&#10;// let bookTitle = &quot;JavaScript Guide&quot;;&#10;// let pageCount = 350;&#10;// let isAvailable = true;&#10;// console.log(typeof bookTitle);">let productName = "Laptop";
+let price = 999.99;
+let inStock = true;
+let features = ["16GB RAM", "512GB SSD", "Intel i7"];
+let product = {
+  brand: "TechCorp",
+  model: "X1000"
+};
+
+console.log("Product: " + productName);
+console.log("Price: $" + price);
+console.log("In stock: " + inStock);
+console.log("Features: " + features.join(", "));
+console.log("Brand: " + product.brand);</textarea>
+                                <button onclick="runDatatypesCode()" class="btn btn-primary mt-2 bg-yellow-500 hover:bg-yellow-600 border-none">Run Code</button>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2">Output:</h4>
+                                <div id="datatypesOutput" class="output-box p-4 rounded-lg overflow-auto">
+                                    Click "Run Code" to see the output here
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 3: Operators -->
+            <div class="topic-section mb-16" id="operators">
+                <div class="card bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl text-yellow-400">
+                            <span class="badge badge-primary mr-2">3</span> Operators
+                        </h3>
+                        <p class="mb-4">Operators are used to perform operations on variables and values:</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <h4 class="font-bold mb-3">Arithmetic Operators</h4>
+                                <ul class="space-y-2">
+                                    <li><code class="bg-gray-700 px-2 py-1 rounded">+</code> Addition</li>
+                                    <li><code class="bg-gray-700 px-2 py-1 rounded">-</code> Subtraction</li>
+                                    <li><code class="bg-gray-700 px-2 py-1 rounded">*</code> Multiplication</li>
+                                    <li><code class="bg-gray-700 px-2 py-1 rounded">/</code> Division</li>
+                                    <li><code class="bg-gray-700 px-2 py-1 rounded">%</code> Modulus (remainder)</li>
+                                    <li><code class="bg-gray-700 px-2 py-1 rounded">++</code> Increment</li>
+                                    <li><code class="bg-gray-700 px-2 py-1 rounded">--</code> Decrement</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-3">Comparison Operators</h4>
+                                <ul class="space-y-2">
+                                    <li><code class="bg-gray-700 px-2 py-1 rounded">==</code> Equal to</li>
+                                    <li><code class="bg-gray-700 px-2 py-1 rounded">===</code> Equal value and type</li>
+                                    <li><code class="bg-gray-700 px-2 py-1 rounded">!=</code> Not equal</li>
+                                    <li><code class="bg-gray-700 px-2 py-1 rounded">!==</code> Not equal value/type</li>
+                                    <li><code class="bg-gray-700 px-2 py-1 rounded">&gt;</code> Greater than</li>
+                                    <li><code class="bg-gray-700 px-2 py-1 rounded">&lt;</code> Less than</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="mockup-code bg-gray-900 mb-6">
+                            <pre data-prefix="1"><code>// Arithmetic operations</code></pre>
+                            <pre data-prefix="2"><code>let x = 10;</code></pre>
+                            <pre data-prefix="3"><code>let y = 5;</code></pre>
+                            <pre data-prefix="4"><code>console.log(x + y);  // 15</code></pre>
+                            <pre data-prefix="5"><code>console.log(x - y);  // 5</code></pre>
+                            <pre data-prefix="6"><code>console.log(x * y);  // 50</code></pre>
+                            <pre data-prefix="7"><code>console.log(x / y);  // 2</code></pre>
+                            <pre data-prefix="8"><code>console.log(x % y);  // 0</code></pre>
+                            <pre data-prefix="9"><code></code></pre>
+                            <pre data-prefix="10"><code>// Comparison operations</code></pre>
+                            <pre data-prefix="11"><code>console.log(x > y);   // true</code></pre>
+                            <pre data-prefix="12"><code>console.log(x === y); // false</code></pre>
+                        </div>
+                        
+                        <div class="divider">Try it yourself</div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold mb-2">Code Editor:</h4>
+                                <textarea id="operatorsEditor" class="code-editor w-full p-4 bg-gray-900 text-green-400 rounded-lg" placeholder="// Try different operators&#10;// Example:&#10;// let a = 20;&#10;// let b = 4;&#10;// console.log(a + b);&#10;// console.log(a > b);">let num1 = 15;
+let num2 = 4;
+
+// Perform arithmetic operations
+console.log("Addition: " + (num1 + num2));
+console.log("Subtraction: " + (num1 - num2));
+console.log("Multiplication: " + (num1 * num2));
+console.log("Division: " + (num1 / num2));
+console.log("Remainder: " + (num1 % num2));
+
+// Perform comparison operations
+console.log("Is num1 greater than num2? " + (num1 > num2));
+console.log("Are they equal? " + (num1 === num2));</textarea>
+                                <button onclick="runOperatorsCode()" class="btn btn-primary mt-2 bg-yellow-500 hover:bg-yellow-600 border-none">Run Code</button>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2">Output:</h4>
+                                <div id="operatorsOutput" class="output-box p-4 rounded-lg overflow-auto">
+                                    Click "Run Code" to see the output here
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 4: Conditionals -->
+            <div class="topic-section mb-16" id="conditionals">
+                <div class="card bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl text-yellow-400">
+                            <span class="badge badge-primary mr-2">4</span> Conditionals
+                        </h3>
+                        <p class="mb-4">Conditionals execute different code based on different conditions:</p>
+                        
+                        <div class="mockup-code bg-gray-900 mb-6">
+                            <pre data-prefix="1"><code>// if statement</code></pre>
+                            <pre data-prefix="2"><code>if (condition) {</code></pre>
+                            <pre data-prefix="3"><code>  // code to execute if condition is true</code></pre>
+                            <pre data-prefix="4"><code>}</code></pre>
+                            <pre data-prefix="5"><code></code></pre>
+                            <pre data-prefix="6"><code>// if...else statement</code></pre>
+                            <pre data-prefix="7"><code>if (condition) {</code></pre>
+                            <pre data-prefix="8"><code>  // code if true</code></pre>
+                            <pre data-prefix="9"><code>} else {</code></pre>
+                            <pre data-prefix="10"><code>  // code if false</code></pre>
+                            <pre data-prefix="11"><code>}</code></pre>
+                            <pre data-prefix="12"><code></code></pre>
+                            <pre data-prefix="13"><code>// Example</code></pre>
+                            <pre data-prefix="14"><code>let age = 18;</code></pre>
+                            <pre data-prefix="15"><code>if (age >= 18) {</code></pre>
+                            <pre data-prefix="16"><code>  console.log("You are an adult");</code></pre>
+                            <pre data-prefix="17"><code>} else {</code></pre>
+                            <pre data-prefix="18"><code>  console.log("You are a minor");</code></pre>
+                            <pre data-prefix="19"><code>}</code></pre>
+                        </div>
+                        
+                        <div class="divider">Try it yourself</div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold mb-2">Code Editor:</h4>
+                                <textarea id="conditionalsEditor" class="code-editor w-full p-4 bg-gray-900 text-green-400 rounded-lg" placeholder="// Try creating conditional statements&#10;// Example:&#10;// let temperature = 25;&#10;// if (temperature > 30) {&#10;//   console.log(&quot;It's hot!&quot;);&#10;// } else if (temperature < 10) {&#10;//   console.log(&quot;It's cold!&quot;);&#10;// } else {&#10;//   console.log(&quot;It's pleasant.&quot;);&#10;// }">let score = 85;
+
+if (score >= 90) {
+  console.log("Grade: A");
+} else if (score >= 80) {
+  console.log("Grade: B");
+} else if (score >= 70) {
+  console.log("Grade: C");
+} else if (score >= 60) {
+  console.log("Grade: D");
+} else {
+  console.log("Grade: F");
+}
+
+// Try changing the score value to see different outputs</textarea>
+                                <button onclick="runConditionalsCode()" class="btn btn-primary mt-2 bg-yellow-500 hover:bg-yellow-600 border-none">Run Code</button>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2">Output:</h4>
+                                <div id="conditionalsOutput" class="output-box p-4 rounded-lg overflow-auto">
+                                    Click "Run Code" to see the output here
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 5: Loops -->
+            <div class="topic-section mb-16" id="loops">
+                <div class="card bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl text-yellow-400">
+                            <span class="badge badge-primary mr-2">5</span> Loops
+                        </h3>
+                        <p class="mb-4">Loops execute code repeatedly based on a condition:</p>
+                        
+                        <div class="mockup-code bg-gray-900 mb-6">
+                            <pre data-prefix="1"><code>// for loop</code></pre>
+                            <pre data-prefix="2"><code>for (let i = 0; i < 5; i++) {</code></pre>
+                            <pre data-prefix="3"><code>  console.log("Iteration: " + i);</code></pre>
+                            <pre data-prefix="4"><code>}</code></pre>
+                            <pre data-prefix="5"><code></code></pre>
+                            <pre data-prefix="6"><code>// while loop</code></pre>
+                            <pre data-prefix="7"><code>let count = 0;</code></pre>
+                            <pre data-prefix="8"><code>while (count < 3) {</code></pre>
+                            <pre data-prefix="9"><code>  console.log("Count: " + count);</code></pre>
+                            <pre data-prefix="10"><code>  count++;</code></pre>
+                            <pre data-prefix="11"><code>}</code></pre>
+                        </div>
+                        
+                        <div class="divider">Try it yourself</div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold mb-2">Code Editor:</h4>
+                                <textarea id="loopsEditor" class="code-editor w-full p-4 bg-gray-900 text-green-400 rounded-lg" placeholder="// Try creating loops&#10;// Example:&#10;// for (let i = 1; i <= 3; i++) {&#10;//   console.log(&quot;Hello #&quot; + i);&#10;// }">// Print numbers from 1 to 10
+for (let i = 1; i <= 10; i++) {
+  console.log(i);
+}
+
+console.log("---");
+
+// Print even numbers from 2 to 20
+for (let i = 2; i <= 20; i += 2) {
+  console.log(i);
+}
+
+console.log("---");
+
+// While loop example
+let counter = 5;
+while (counter > 0) {
+  console.log("Countdown: " + counter);
+  counter--;
+}
+console.log("Blast off!");</textarea>
+                                <button onclick="runLoopsCode()" class="btn btn-primary mt-2 bg-yellow-500 hover:bg-yellow-600 border-none">Run Code</button>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2">Output:</h4>
+                                <div id="loopsOutput" class="output-box p-4 rounded-lg overflow-auto">
+                                    Click "Run Code" to see the output here
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 6: Functions -->
+            <div class="topic-section mb-16" id="functions">
+                <div class="card bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl text-yellow-400">
+                            <span class="badge badge-primary mr-2">6</span> Functions
+                        </h3>
+                        <p class="mb-4">Functions are blocks of code designed to perform a particular task. They are executed when "called" or "invoked":</p>
+                        
+                        <div class="mockup-code bg-gray-900 mb-6">
+                            <pre data-prefix="1"><code>// Function declaration</code></pre>
+                            <pre data-prefix="2"><code>function functionName(parameter1, parameter2) {</code></pre>
+                            <pre data-prefix="3"><code>  // code to be executed</code></pre>
+                            <pre data-prefix="4"><code>  return result;</code></pre>
+                            <pre data-prefix="5"><code>}</code></pre>
+                            <pre data-prefix="6"><code></code></pre>
+                            <pre data-prefix="7"><code>// Example function</code></pre>
+                            <pre data-prefix="8"><code>function greet(name) {</code></pre>
+                            <pre data-prefix="9"><code>  return "Hello, " + name + "!";</code></pre>
+                            <pre data-prefix="10"><code>}</code></pre>
+                            <pre data-prefix="11"><code></code></pre>
+                            <pre data-prefix="12"><code>// Calling the function</code></pre>
+                            <pre data-prefix="13"><code>console.log(greet("Alice")); // Output: Hello, Alice!</code></pre>
+                        </div>
+                        
+                        <div class="divider">Try it yourself</div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold mb-2">Code Editor:</h4>
+                                <textarea id="functionsEditor" class="code-editor w-full p-4 bg-gray-900 text-green-400 rounded-lg" placeholder="// Try creating your own functions&#10;// Example:&#10;// function add(a, b) {&#10;//   return a + b;&#10;// }&#10;// console.log(add(5, 3));">// Create a function to calculate area of rectangle
+function calculateArea(length, width) {
+  return length * width;
+}
+
+// Create a function to check if a number is even
+function isEven(number) {
+  return number % 2 === 0;
+}
+
+// Test the functions
+console.log("Area of rectangle (5x3): " + calculateArea(5, 3));
+console.log("Area of rectangle (10x7): " + calculateArea(10, 7));
+
+console.log("Is 4 even? " + isEven(4));
+console.log("Is 7 even? " + isEven(7));
+
+// Try creating your own function below:
+function yourFunction() {
+  // Your code here
+}</textarea>
+                                <button onclick="runFunctionsCode()" class="btn btn-primary mt-2 bg-yellow-500 hover:bg-yellow-600 border-none">Run Code</button>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2">Output:</h4>
+                                <div id="functionsOutput" class="output-box p-4 rounded-lg overflow-auto">
+                                    Click "Run Code" to see the output here
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ADVANCED SECTION -->
+    <section id="AdvancedSection" class="py-16 bg-gray-800 topic-section">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">JavaScript Advanced Topics</h2>
+                <p class="max-w-2xl mx-auto text-gray-300">Master these advanced concepts to build more efficient JavaScript applications.</p>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+
+            <!-- Topic 1: Arrays -->
+            <div class="topic-section mb-16" id="arrays">
+                <div class="card bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl text-yellow-400">
+                            <span class="badge badge-primary mr-2">1</span> Arrays and Array Methods
+                        </h3>
+                        <p class="mb-4">Arrays are used to store multiple values in a single variable. JavaScript provides many built-in methods to manipulate arrays:</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <h4 class="font-bold mb-3">Creating and Accessing Arrays</h4>
+                                <div class="mockup-code bg-gray-900 mb-4">
+                                    <pre data-prefix="1"><code>let fruits = ["apple", "banana", "orange"];</code></pre>
+                                    <pre data-prefix="2"><code>console.log(fruits[0]); // "apple"</code></pre>
+                                    <pre data-prefix="3"><code>console.log(fruits.length); // 3</code></pre>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-3">Common Array Methods</h4>
+                                <ul class="space-y-2">
+                                    <li><code class="bg-gray-700 px-2 py-1 rounded">push()</code> - Add element to end</li>
+                                    <li><code class="bg-gray-700 px-2 py-1 rounded">pop()</code> - Remove last element</li>
+                                    <li><code class="bg-gray-700 px-2 py-1 rounded">shift()</code> - Remove first element</li>
+                                    <li><code class="bg-gray-700 px-2 py-1 rounded">unshift()</code> - Add element to beginning</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="mockup-code bg-gray-900 mb-6">
+                            <pre data-prefix="1"><code>let colors = ["red", "green"];</code></pre>
+                            <pre data-prefix="2"><code>colors.push("blue");     // ["red", "green", "blue"]</code></pre>
+                            <pre data-prefix="3"><code>colors.pop();           // removes "blue"</code></pre>
+                            <pre data-prefix="4"><code>colors.unshift("yellow"); // ["yellow", "red", "green"]</code></pre>
+                            <pre data-prefix="5"><code>colors.shift();         // removes "yellow"</code></pre>
+                        </div>
+                        
+                        <div class="divider">Try it yourself</div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold mb-2">Code Editor:</h4>
+                                <textarea id="arraysEditor" class="code-editor w-full p-4 bg-gray-900 text-green-400 rounded-lg" placeholder="// Try array methods&#10;// Example:&#10;// let animals = [&quot;cat&quot;, &quot;dog&quot;];&#10;// animals.push(&quot;bird&quot;);&#10;// console.log(animals);">let shoppingList = ["milk", "bread"];
+
+// Add items to the list
+shoppingList.push("eggs");
+shoppingList.push("cheese");
+
+// Check the list
+console.log("Shopping list:", shoppingList);
+
+// Remove the first item
+let firstItem = shoppingList.shift();
+console.log("Removed first item:", firstItem);
+console.log("Updated list:", shoppingList);
+
+// Add items to the beginning
+shoppingList.unshift("coffee", "tea");
+console.log("Final list:", shoppingList);</textarea>
+                                <button onclick="runArraysCode()" class="btn btn-primary mt-2 bg-yellow-500 hover:bg-yellow-600 border-none">Run Code</button>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2">Output:</h4>
+                                <div id="arraysOutput" class="output-box p-4 rounded-lg overflow-auto">
+                                    Click "Run Code" to see the output here
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 2: Array Iteration Methods -->
+            <div class="topic-section mb-16" id="array-methods">
+                <div class="card bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl text-yellow-400">
+                            <span class="badge badge-primary mr-2">2</span> Array Iteration Methods
+                        </h3>
+                        <p class="mb-4">JavaScript provides powerful methods to iterate through arrays and transform data:</p>
+                        
+                        <div class="overflow-x-auto mb-6">
+                            <table class="table w-full">
+                                <thead>
+                                    <tr>
+                                        <th>Method</th>
+                                        <th>Purpose</th>
+                                        <th>Returns</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code class="bg-gray-700 px-2 py-1 rounded">map()</code></td>
+                                        <td>Creates new array with results of calling a function for every element</td>
+                                        <td>New array</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code class="bg-gray-700 px-2 py-1 rounded">filter()</code></td>
+                                        <td>Creates new array with elements that pass a test</td>
+                                        <td>New array</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code class="bg-gray-700 px-2 py-1 rounded">reduce()</code></td>
+                                        <td>Reduces array to a single value</td>
+                                        <td>Single value</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code class="bg-gray-700 px-2 py-1 rounded">find()</code></td>
+                                        <td>Returns first element that passes a test</td>
+                                        <td>Element or undefined</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code class="bg-gray-700 px-2 py-1 rounded">forEach()</code></td>
+                                        <td>Executes a function for each array element</td>
+                                        <td>undefined</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="mockup-code bg-gray-900 mb-6">
+                            <pre data-prefix="1"><code>let numbers = [1, 2, 3, 4, 5];</code></pre>
+                            <pre data-prefix="2"><code></code></pre>
+                            <pre data-prefix="3"><code>// map - create new array with doubled values</code></pre>
+                            <pre data-prefix="4"><code>let doubled = numbers.map(x => x * 2);</code></pre>
+                            <pre data-prefix="5"><code>console.log(doubled); // [2, 4, 6, 8, 10]</code></pre>
+                            <pre data-prefix="6"><code></code></pre>
+                            <pre data-prefix="7"><code>// filter - create new array with even numbers</code></pre>
+                            <pre data-prefix="8"><code>let evens = numbers.filter(x => x % 2 === 0);</code></pre>
+                            <pre data-prefix="9"><code>console.log(evens); // [2, 4]</code></pre>
+                            <pre data-prefix="10"><code></code></pre>
+                            <pre data-prefix="11"><code>// reduce - calculate sum of all numbers</code></pre>
+                            <pre data-prefix="12"><code>let sum = numbers.reduce((acc, curr) => acc + curr, 0);</code></pre>
+                            <pre data-prefix="13"><code>console.log(sum); // 15</code></pre>
+                        </div>
+                        
+                        <div class="divider">Try it yourself</div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold mb-2">Code Editor:</h4>
+                                <textarea id="arrayMethodsEditor" class="code-editor w-full p-4 bg-gray-900 text-green-400 rounded-lg" placeholder="// Try array iteration methods&#10;// Example:&#10;// let nums = [1, 2, 3, 4, 5];&#10;// let squares = nums.map(n => n * n);&#10;// console.log(squares);">let products = [
+  { name: "Laptop", price: 1200, category: "Electronics" },
+  { name: "Book", price: 20, category: "Education" },
+  { name: "Phone", price: 800, category: "Electronics" },
+  { name: "Desk", price: 300, category: "Furniture" }
+];
+
+// Use map to get just the names
+let productNames = products.map(product => product.name);
+console.log("Product names:", productNames);
+
+// Use filter to get only Electronics
+let electronics = products.filter(product => product.category === "Electronics");
+console.log("Electronics:", electronics);
+
+// Use reduce to calculate total value
+let totalValue = products.reduce((sum, product) => sum + product.price, 0);
+console.log("Total value: $" + totalValue);
+
+// Use find to locate a specific product
+let foundProduct = products.find(product => product.name === "Book");
+console.log("Found product:", foundProduct);</textarea>
+                                <button onclick="runArrayMethodsCode()" class="btn btn-primary mt-2 bg-yellow-500 hover:bg-yellow-600 border-none">Run Code</button>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2">Output:</h4>
+                                <div id="arrayMethodsOutput" class="output-box p-4 rounded-lg overflow-auto">
+                                    Click "Run Code" to see the output here
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 3: Objects -->
+            <div class="topic-section mb-16" id="objects">
+                <div class="card bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl text-yellow-400">
+                            <span class="badge badge-primary mr-2">3</span> Objects and Object Methods
+                        </h3>
+                        <p class="mb-4">Objects are collections of key-value pairs. They are fundamental to JavaScript and used to store structured data:</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <h4 class="font-bold mb-3">Creating and Accessing Objects</h4>
+                                <div class="mockup-code bg-gray-900 mb-4">
+                                    <pre data-prefix="1"><code>// Object literal</code></pre>
+                                    <pre data-prefix="2"><code>let person = {</code></pre>
+                                    <pre data-prefix="3"><code>  name: "Alice",</code></pre>
+                                    <pre data-prefix="4"><code>  age: 30,</code></pre>
+                                    <pre data-prefix="5"><code>  city: "New York"</code></pre>
+                                    <pre data-prefix="6"><code>};</code></pre>
+                                    <pre data-prefix="7"><code></code></pre>
+                                    <pre data-prefix="8"><code>// Accessing properties</code></pre>
+                                    <pre data-prefix="9"><code>console.log(person.name);     // "Alice"</code></pre>
+                                    <pre data-prefix="10"><code>console.log(person["age"]);   // 30</code></pre>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-3">Modifying Objects</h4>
+                                <div class="mockup-code bg-gray-900 mb-4">
+                                    <pre data-prefix="1"><code>// Adding properties</code></pre>
+                                    <pre data-prefix="2"><code>person.job = "Developer";</code></pre>
+                                    <pre data-prefix="3"><code></code></pre>
+                                    <pre data-prefix="4"><code>// Modifying properties</code></pre>
+                                    <pre data-prefix="5"><code>person.age = 31;</code></pre>
+                                    <pre data-prefix="6"><code></code></pre>
+                                    <pre data-prefix="7"><code>// Deleting properties</code></pre>
+                                    <pre data-prefix="8"><code>delete person.city;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="divider">Try it yourself</div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold mb-2">Code Editor:</h4>
+                                <textarea id="objectsEditor" class="code-editor w-full p-4 bg-gray-900 text-green-400 rounded-lg" placeholder="// Try creating and manipulating objects&#10;// Example:&#10;// let car = { make: &quot;Toyota&quot; };&#10;// car.model = &quot;Camry&quot;;&#10;// console.log(car);">let student = {
+  firstName: "John",
+  lastName: "Smith",
+  grades: [85, 92, 78, 96]
+};
+
+// Access properties
+console.log("Student:", student.firstName + " " + student.lastName);
+
+// Add properties
+student.age = 20;
+student.major = "Computer Science";
+
+// Modify existing property
+student.grades.push(88); // Add another grade
+
+// Calculate average grade
+let sum = student.grades.reduce((acc, grade) => acc + grade, 0);
+let average = sum / student.grades.length;
+
+console.log("Average grade:", average.toFixed(2));
+
+// Display the complete student object
+console.log("Complete student record:", student);</textarea>
+                                <button onclick="runObjectsCode()" class="btn btn-primary mt-2 bg-yellow-500 hover:bg-yellow-600 border-none">Run Code</button>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2">Output:</h4>
+                                <div id="objectsOutput" class="output-box p-4 rounded-lg overflow-auto">
+                                    Click "Run Code" to see the output here
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 4: Object Methods -->
+            <div class="topic-section mb-16" id="object-methods">
+                <div class="card bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl text-yellow-400">
+                            <span class="badge badge-primary mr-2">4</span> Object Methods
+                        </h3>
+                        <p class="mb-4">JavaScript provides several built-in methods to work with objects:</p>
+                        
+                        <div class="overflow-x-auto mb-6">
+                            <table class="table w-full">
+                                <thead>
+                                    <tr>
+                                        <th>Method</th>
+                                        <th>Description</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code class="bg-gray-700 px-2 py-1 rounded">Object.keys()</code></td>
+                                        <td>Returns array of object's own enumerable property names</td>
+                                        <td><code class="bg-gray-700 px-2 py-1 rounded">Object.keys(obj)</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code class="bg-gray-700 px-2 py-1 rounded">Object.values()</code></td>
+                                        <td>Returns array of object's own enumerable property values</td>
+                                        <td><code class="bg-gray-700 px-2 py-1 rounded">Object.values(obj)</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><code class="bg-gray-700 px-2 py-1 rounded">Object.entries()</code></td>
+                                        <td>Returns array of object's own enumerable property [key, value] pairs</td>
+                                        <td><code class="bg-gray-700 px-2 py-1 rounded">Object.entries(obj)</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="mockup-code bg-gray-900 mb-6">
+                            <pre data-prefix="1"><code>let user = {</code></pre>
+                            <pre data-prefix="2"><code>  name: "Alice",</code></pre>
+                            <pre data-prefix="3"><code>  age: 30,</code></pre>
+                            <pre data-prefix="4"><code>  city: "New York"</code></pre>
+                            <pre data-prefix="5"><code>};</code></pre>
+                            <pre data-prefix="6"><code></code></pre>
+                            <pre data-prefix="7"><code>// Get keys</code></pre>
+                            <pre data-prefix="8"><code>console.log(Object.keys(user));</code></pre>
+                            <pre data-prefix="9"><code>// Output: ["name", "age", "city"]</code></pre>
+                            <pre data-prefix="10"><code></code></pre>
+                            <pre data-prefix="11"><code>// Get values</code></pre>
+                            <pre data-prefix="12"><code>console.log(Object.values(user));</code></pre>
+                            <pre data-prefix="13"><code>// Output: ["Alice", 30, "New York"]</code></pre>
+                            <pre data-prefix="14"><code></code></pre>
+                            <pre data-prefix="15"><code>// Get entries</code></pre>
+                            <pre data-prefix="16"><code>console.log(Object.entries(user));</code></pre>
+                            <pre data-prefix="17"><code>// Output: [["name", "Alice"], ["age", 30], ["city", "New York"]]</code></pre>
+                        </div>
+                        
+                        <div class="divider">Try it yourself</div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold mb-2">Code Editor:</h4>
+                                <textarea id="objectMethodsEditor" class="code-editor w-full p-4 bg-gray-900 text-green-400 rounded-lg" placeholder="// Try object methods&#10;// Example:&#10;// let car = { make: &quot;Toyota&quot;, model: &quot;Camry&quot; };&#10;// console.log(Object.keys(car));">let course = {
+  title: "JavaScript Fundamentals",
+  duration: "8 weeks",
+  level: "Beginner",
+  students: 25
+};
+
+// Get all property names
+let properties = Object.keys(course);
+console.log("Properties:", properties);
+
+// Get all values
+let values = Object.values(course);
+console.log("Values:", values);
+
+// Get key-value pairs
+let entries = Object.entries(course);
+console.log("Entries:", entries);
+
+// Count properties
+console.log("Number of properties:", properties.length);
+
+// Check if a property exists
+if (properties.includes("title")) {
+  console.log("Course has a title");
+}
+
+// Create a formatted string of all properties and values
+let details = "";
+for (let [key, value] of entries) {
+  details += `${key}: ${value}\n`;
+}
+console.log("Course details:\n" + details);</textarea>
+                                <button onclick="runObjectMethodsCode()" class="btn btn-primary mt-2 bg-yellow-500 hover:bg-yellow-600 border-none">Run Code</button>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2">Output:</h4>
+                                <div id="objectMethodsOutput" class="output-box p-4 rounded-lg overflow-auto">
+                                    Click "Run Code" to see the output here
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 5: Destructuring -->
+            <div class="topic-section mb-16" id="destructuring">
+                <div class="card bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl text-yellow-400">
+                            <span class="badge badge-primary mr-2">5</span> Destructuring
+                        </h3>
+                        <p class="mb-4">Destructuring allows you to unpack values from arrays or properties from objects into distinct variables:</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <h4 class="font-bold mb-3">Array Destructuring</h4>
+                                <div class="mockup-code bg-gray-900 mb-4">
+                                    <pre data-prefix="1"><code>let colors = ["red", "green", "blue"];</code></pre>
+                                    <pre data-prefix="2"><code></code></pre>
+                                    <pre data-prefix="3"><code>// Destructuring assignment</code></pre>
+                                    <pre data-prefix="4"><code>let [first, second, third] = colors;</code></pre>
+                                    <pre data-prefix="5"><code>console.log(first);  // "red"</code></pre>
+                                    <pre data-prefix="6"><code>console.log(second); // "green"</code></pre>
+                                    <pre data-prefix="7"><code></code></pre>
+                                    <pre data-prefix="8"><code>// Skip elements</code></pre>
+                                    <pre data-prefix="9"><code>let [primary, , tertiary] = colors;</code></pre>
+                                    <pre data-prefix="10"><code>console.log(tertiary); // "blue"</code></pre>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-3">Object Destructuring</h4>
+                                <div class="mockup-code bg-gray-900 mb-4">
+                                    <pre data-prefix="1"><code>let person = { name: "Alice", age: 30, city: "NYC" };</code></pre>
+                                    <pre data-prefix="2"><code></code></pre>
+                                    <pre data-prefix="3"><code>// Destructuring assignment</code></pre>
+                                    <pre data-prefix="4"><code>let { name, age } = person;</code></pre>
+                                    <pre data-prefix="5"><code>console.log(name); // "Alice"</code></pre>
+                                    <pre data-prefix="6"><code>console.log(age);  // 30</code></pre>
+                                    <pre data-prefix="7"><code></code></pre>
+                                    <pre data-prefix="8"><code>// Assign to new variable names</code></pre>
+                                    <pre data-prefix="9"><code>let { name: fullName, age: years } = person;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="divider">Try it yourself</div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold mb-2">Code Editor:</h4>
+                                <textarea id="destructuringEditor" class="code-editor w-full p-4 bg-gray-900 text-green-400 rounded-lg" placeholder="// Try destructuring&#10;// Example:&#10;// let [x, y] = [10, 20];&#10;// console.log(x, y);">let coordinates = [150, 200, 50];
+let rgb = [255, 128, 0];
+
+// Array destructuring
+let [x, y, z] = coordinates;
+console.log(`Position: x=${x}, y=${y}, z=${z}`);
+
+let [red, green, blue] = rgb;
+console.log(`RGB Color: R=${red}, G=${green}, B=${blue}`);
+
+let student = {
+  firstName: "Emma",
+  lastName: "Johnson",
+  grades: { math: 95, science: 88 },
+  isActive: true
+};
+
+// Object destructuring
+let { firstName, lastName, grades } = student;
+console.log(`Student: ${firstName} ${lastName}`);
+console.log("Math grade:", grades.math);
+
+// Destructuring with renaming
+let { firstName: fName, lastName: lName, isActive: active } = student;
+console.log(`Full name: ${fName} ${lName}, Active: ${active}`);
+
+// Nested destructuring
+let { grades: { math, science } } = student;
+console.log(`Grades - Math: ${math}, Science: ${science}`);</textarea>
+                                <button onclick="runDestructuringCode()" class="btn btn-primary mt-2 bg-yellow-500 hover:bg-yellow-600 border-none">Run Code</button>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2">Output:</h4>
+                                <div id="destructuringOutput" class="output-box p-4 rounded-lg overflow-auto">
+                                    Click "Run Code" to see the output here
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 6: Spread and Rest Operators -->
+            <div class="topic-section mb-16" id="spread-rest">
+                <div class="card bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <h3 class="card-title text-2xl text-yellow-400">
+                            <span class="badge badge-primary mr-2">6</span> Spread and Rest Operators
+                        </h3>
+                        <p class="mb-4">The spread (...) and rest (...) operators provide powerful ways to work with arrays and objects:</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <h4 class="font-bold mb-3">Spread Operator</h4>
+                                <p class="mb-2">Expands an iterable (like an array) into individual elements</p>
+                                <div class="mockup-code bg-gray-900 mb-4">
+                                    <pre data-prefix="1"><code>// Array spreading</code></pre>
+                                    <pre data-prefix="2"><code>let arr1 = [1, 2, 3];</code></pre>
+                                    <pre data-prefix="3"><code>let arr2 = [4, 5, 6];</code></pre>
+                                    <pre data-prefix="4"><code>let combined = [...arr1, ...arr2];</code></pre>
+                                    <pre data-prefix="5"><code>console.log(combined); // [1, 2, 3, 4, 5, 6]</code></pre>
+                                    <pre data-prefix="6"><code></code></pre>
+                                    <pre data-prefix="7"><code>// Object spreading</code></pre>
+                                    <pre data-prefix="8"><code>let obj1 = { a: 1, b: 2 };</code></pre>
+                                    <pre data-prefix="9"><code>let obj2 = { c: 3, d: 4 };</code></pre>
+                                    <pre data-prefix="10"><code>let merged = { ...obj1, ...obj2 };</code></pre>
+                                    <pre data-prefix="11"><code>console.log(merged); // { a: 1, b: 2, c: 3, d: 4 }</code></pre>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-3">Rest Operator</h4>
+                                <p class="mb-2">Collects multiple elements into a single array</p>
+                                <div class="mockup-code bg-gray-900 mb-4">
+                                    <pre data-prefix="1"><code>// Function parameters</code></pre>
+                                    <pre data-prefix="2"><code>function sum(...numbers) {</code></pre>
+                                    <pre data-prefix="3"><code>  return numbers.reduce((a, b) => a + b, 0);</code></pre>
+                                    <pre data-prefix="4"><code>}</code></pre>
+                                    <pre data-prefix="5"><code>console.log(sum(1, 2, 3, 4)); // 10</code></pre>
+                                    <pre data-prefix="6"><code></code></pre>
+                                    <pre data-prefix="7"><code>// Array destructuring</code></pre>
+                                    <pre data-prefix="8"><code>let [first, ...rest] = [1, 2, 3, 4];</code></pre>
+                                    <pre data-prefix="9"><code>console.log(first); // 1</code></pre>
+                                    <pre data-prefix="10"><code>console.log(rest);  // [2, 3, 4]</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="divider">Try it yourself</div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold mb-2">Code Editor:</h4>
+                                <textarea id="spreadRestEditor" class="code-editor w-full p-4 bg-gray-900 text-green-400 rounded-lg" placeholder="// Try spread and rest operators&#10;// Example:&#10;// let nums = [1, 2, 3];&#10;// let moreNums = [...nums, 4, 5];&#10;// console.log(moreNums);">let teamA = ["Alice", "Bob", "Charlie"];
+let teamB = ["David", "Eve", "Frank"];
+
+// Combine teams using spread operator
+let allPlayers = [...teamA, ...teamB];
+console.log("All players:", allPlayers);
+
+// Create a copy of an array
+let backupTeam = [...teamA];
+console.log("Backup team:", backupTeam);
+
+// Add new players to existing team
+let expandedTeamA = [...teamA, "Grace", "Henry"];
+console.log("Expanded Team A:", expandedTeamA);
+
+// Object spreading
+let user = { name: "John", age: 30 };
+let userDetails = { ...user, city: "New York", occupation: "Developer" };
+console.log("User details:", userDetails);
+
+// Function with rest parameters
+function calculateTotal(base, ...additional) {
+  let additionalSum = additional.reduce((sum, value) => sum + value, 0);
+  return base + additionalSum;
+}
+
+console.log("Total:", calculateTotal(100, 10, 20, 30)); // 160
+
+// Array destructuring with rest
+let scores = [95, 87, 92, 88, 90];
+let [firstScore, secondScore, ...otherScores] = scores;
+console.log(`First: ${firstScore}, Second: ${secondScore}`);
+console.log("Other scores:", otherScores);</textarea>
+                                <button onclick="runSpreadRestCode()" class="btn btn-primary mt-2 bg-yellow-500 hover:bg-yellow-600 border-none">Run Code</button>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-2">Output:</h4>
+                                <div id="spreadRestOutput" class="output-box p-4 rounded-lg overflow-auto">
+                                    Click "Run Code" to see the output here
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Section -->
+    <section id="practice" class="py-16 topic-section">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Challenge Yourself</h2>
+                <p class="max-w-2xl mx-auto text-gray-300">Test your knowledge with these projects</p>
+                <div class="w-20 h-1 bg-yellow-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card bg-gray-800 shadow-xl">
+                    <div class="card-body">
+                        <h3 class="card-title text-yellow-400">Beginner: Calculator</h3>
+                        <p>Create a simple calculator that can add, subtract, multiply, and divide two numbers.</p>
+                        <div class="card-actions justify-end mt-4">
+                            <button class="btn btn-outline btn-warning">Try Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card bg-gray-800 shadow-xl">
+                    <div class="card-body">
+                        <h3 class="card-title text-yellow-400">Intermediate: To-Do List</h3>
+                        <p>Build a to-do list that allows adding and removing items, using arrays and objects.</p>
+                        <div class="card-actions justify-end mt-4">
+                            <button class="btn btn-outline btn-warning">Try Now</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card bg-gray-800 shadow-xl">
+                    <div class="card-body">
+                        <h3 class="card-title text-yellow-400">Advanced: Data Processing</h3>
+                        <p>Use map, filter, and reduce to process a dataset and generate meaningful reports.</p>
+                        <div class="card-actions justify-end mt-4">
+                            <button class="btn btn-outline btn-warning">Try Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer footer-center p-10 bg-gray-800 text-gray-300">
+        <div>
+            <div class="flex items-center justify-center space-x-2 mb-4">
+                <img src="" alt="JavaScript Logo" class="w-8 h-8">
+                <h2 class="text-2xl font-bold text-yellow-400">JavaScript<span class="text-white">Course</span></h2>
+            </div>
+            <p class="max-w-lg">Learn JavaScript from basic to advanced concepts with interactive examples. Start your journey to becoming a skilled JavaScript developer today!</p>
+        </div>
+        <div>
+            <div class="grid grid-flow-col gap-4">
+                <a href="#intro" class="link link-hover">Introduction</a>
+                <a href="#fundamentals" class="link link-hover">Fundamentals</a>
+                <a href="#advanced" class="link link-hover">Advanced</a>
+                <a href="#practice" class="link link-hover">Practice</a>
+            </div>
+        </div>
+        <div>
+            <p>© 2025 JavaScript Course - Educational Platform</p>
+        </div>
+    </footer>
+
+    <script>
+        // Demo button functionality
+        document.getElementById('demoButton').addEventListener('click', function() {
+            document.getElementById('demoOutput').textContent = "Great job! You just executed your first JavaScript code!";
+            document.getElementById('demoOutput').classList.add('text-green-400');
+        });
+        
+        // Code execution functions
+        function runVariablesCode() {
+            const code = document.getElementById('variablesEditor').value;
+            executeCode(code, 'variablesOutput');
+        }
+        
+        function runDatatypesCode() {
+            const code = document.getElementById('datatypesEditor').value;
+            executeCode(code, 'datatypesOutput');
+        }
+        
+        function runOperatorsCode() {
+            const code = document.getElementById('operatorsEditor').value;
+            executeCode(code, 'operatorsOutput');
+        }
+        
+        function runConditionalsCode() {
+            const code = document.getElementById('conditionalsEditor').value;
+            executeCode(code, 'conditionalsOutput');
+        }
+        
+        function runLoopsCode() {
+            const code = document.getElementById('loopsEditor').value;
+            executeCode(code, 'loopsOutput');
+        }
+        
+        function runFunctionsCode() {
+            const code = document.getElementById('functionsEditor').value;
+            executeCode(code, 'functionsOutput');
+        }
+        
+        function runArraysCode() {
+            const code = document.getElementById('arraysEditor').value;
+            executeCode(code, 'arraysOutput');
+        }
+        
+        function runArrayMethodsCode() {
+            const code = document.getElementById('arrayMethodsEditor').value;
+            executeCode(code, 'arrayMethodsOutput');
+        }
+        
+        function runObjectsCode() {
+            const code = document.getElementById('objectsEditor').value;
+            executeCode(code, 'objectsOutput');
+        }
+        
+        function runObjectMethodsCode() {
+            const code = document.getElementById('objectMethodsEditor').value;
+            executeCode(code, 'objectMethodsOutput');
+        }
+        
+        function runDestructuringCode() {
+            const code = document.getElementById('destructuringEditor').value;
+            executeCode(code, 'destructuringOutput');
+        }
+        
+        function runSpreadRestCode() {
+            const code = document.getElementById('spreadRestEditor').value;
+            executeCode(code, 'spreadRestOutput');
+        }
+        
+        // Generic code execution function
+        function executeCode(code, outputElementId) {
+            const outputElement = document.getElementById(outputElementId);
+            outputElement.innerHTML = '';
+            
+            // Create a mock console.log function to capture output
+            const logs = [];
+            const mockConsole = {
+                log: function(...args) {
+                    logs.push(args.map(arg => 
+                        typeof arg === 'object' ? JSON.stringify(arg) : String(arg)
+                    ).join(' '));
+                }
+            };
+            
+            try {
+                // Execute the code with our mock console
+                const func = new Function('console', code);
+                func(mockConsole);
+                
+                // Display the output
+                if (logs.length > 0) {
+                    outputElement.innerHTML = logs.join('<br>');
+                } else {
+                    outputElement.innerHTML = '<span class="text-gray-400">Code executed successfully (no output)</span>';
+                }
+            } catch (error) {
+                outputElement.innerHTML = `<span class="text-red-400">Error: ${error.message}</span>`;
+            }
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
