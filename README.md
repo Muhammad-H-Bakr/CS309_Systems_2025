@@ -28,7 +28,7 @@ The repo begins with static front-end implementation and will gradually expand i
 ---
 
 ## 🛠️ How to Run
-
-1. Clone this repository:
+(if further steps for installing something came, they will be added propmtly)
+Clone this repository:
    ```bash
    git clone https://github.com/Muhammad-H-Bakr/CS309_Systems_2025.git
