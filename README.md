@@ -28,7 +28,7 @@ The repo begins with static front-end implementation and will gradually expand i
 ---
 
 ## 🛠️ How to Run
-(if further steps for installing something came, they will be added propmtly)
+(If further steps for installing something came, they will be added propmtly)
 
 Clone this repository:
    ```bash
