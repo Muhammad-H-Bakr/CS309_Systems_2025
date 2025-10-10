@@ -1,6 +1,6 @@
 # CS309 Systems 2025
 
-A web development repo for **CS309 Systems**, designed to evolve into complete **MERN stack** — **MongoDB**, **Express.js**, **React.js**, and **Node.js**.
+A web development repo for **CS309**, designed to evolve into complete **MERN stack** — **MongoDB**, **Express.js**, **React.js**, and **Node.js**.
 ---
 
 ## 🌐 Overview
