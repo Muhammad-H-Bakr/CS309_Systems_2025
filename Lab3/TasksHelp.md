@@ -1,190 +1,46 @@
-## **🌟 Task 1: Product Screening and Tagging (Map & Filter)**
+## **💻 Array Manipulation Tools**
 
-### **The Scenario**
+Arrays are lists of things (like products or scores). The following methods are the workhorses for handling arrays.
 
-You manage a product catalog. You need to identify products that are currently **on sale** (discounted) and create promotional tags for them.
+### **1\. The Big Three: map, filter, and reduce**
 
-### **The Data**
+These three functions are fundamental to modern JavaScript and are often chained together.
 
-const inventory \= \[  
-  { id: 101, name: 'Laptop Pro', price: 1200, isDiscounted: true },  
-  { id: 102, name: 'Mechanical Keyboard', price: 120, isDiscounted: false },  
-  { id: 103, name: '4K Monitor', price: 450, isDiscounted: true },  
-  { id: 104, name: 'Webcam HD', price: 50, isDiscounted: false },  
-  { id: 105, name: 'Gaming Mouse', price: 75, isDiscounted: true },  
-\];
+| Tool | Analogy | What It Does | When to Use It (Task 1, 2\) |
+| :---- | :---- | :---- | :---- |
+| **.filter()** | A **Sieve** | Creates a **new array** containing only the items that pass a specific test (or condition). It always returns a subset of the original items. | To select all **discounted products** or all **passing students**. |
+| **.map()** | A **Conveyor Belt Transformer** | Creates a **new array** where every item from the original array is transformed (or changed) into a new value. The new array always has the **same number of items**. | To convert a product object into a simple **promo tag string** (e.g., 'Laptop Pro'  'Laptop Pro \- ON SALE\!'). |
+| **.reduce()** | A **Blender** | Boils down (or aggregates) an entire array into a single value (like a number, an object, or a single string). It uses an **accumulator** to hold the running result. | To calculate the **sum of all ages** or the **total inventory value**. It can also build a complex object, like counting color frequencies. |
 
-### **The Tasks**
+### **2\. Iteration and Sorting**
 
-1. **Filter Discounted Items:** Use the **filter()** method to create a new array containing only the products where isDiscounted is true.  
-2. **Generate Promo Tags:** Use the **map()** method on the filtered array to create a new array of strings. Each string should be a tag in the format: "\[Name\] \- ON SALE\!".
-
-### **Expected Output**
-
-\[  
-  "Laptop Pro \- ON SALE\!",  
-  "4K Monitor \- ON SALE\!",  
-  "Gaming Mouse \- ON SALE\!"  
-\]
+| Tool | Analogy | What It Does | When to Use It (Task 2, 4\) |
+| :---- | :---- | :---- | :---- |
+| **.forEach()** | A **Simple Iterator** | Executes a function for **every item** in the array. Unlike map or filter, it doesn't create a new array or return a value. Its purpose is usually to cause a **side effect**, like logging or modifying an external object. | To iterate through products and **tally up the counts** in an outside price category object. |
+| **.sort()** | A **Librarian** | Rearranges the elements of an array *in place* (it modifies the original array). For numbers and custom objects, you must provide a **comparison function** to tell it how to order the items. | To order a list of feature requests by **lowest priority number**. |
 
 ---
 
-## **📝 Task 2: Inventory Valuation and Categorization (Reduce & ForEach)**
+## **🧩 Object & Array Structure Tools**
 
-### **The Scenario**
+These methods help you take things apart (destructuring) or change the structure of your data.
 
-You need to calculate the **total value** of the stock and then count how many products fall into different **price categories**.
+### **3\. Destructuring and Spreading (Task 3\)**
 
-### **The Data**
+| Tool | Syntax | What It Does | Use Case |
+| :---- | :---- | :---- | :---- |
+| **Object Destructuring** | const { id, price: P } \= obj; | Allows you to **pull out specific properties** from an object and assign them to local variables with a single line. You can also **rename** the variables (e.g., price: P). | Quickly getting the id and renaming basePrice to MSRP from a product configuration. |
+| **Array Destructuring** | const \[first, ...rest\] \= arr; | Allows you to **pull out elements** from an array based on their position. The **rest operator (...)** collects all remaining elements into a new array. | Getting the mainFeature and collecting all otherFeatures into a new array. |
+| **Spread Operator** | const newObj \= { ...old, ...add }; | **Copies** all properties from one object (or elements from one array) into another array or object. It's used for merging or creating copies. | Combining productConfig and adding the inStock: true property to create a **merged productSummary object**. |
 
-(Using the same inventory data from Task 1, but assume you've added a quantity field for this task.)
+### **4\. Conversion Between Objects and Arrays (Task 4, 5\)**
 
-const inventory \= \[  
-  { id: 101, name: 'Laptop Pro', price: 1200, quantity: 5 },  
-  { id: 102, name: 'Mechanical Keyboard', price: 120, quantity: 20 },  
-  { id: 103, name: '4K Monitor', price: 450, quantity: 10 },  
-  { id: 104, name: 'Webcam HD', price: 50, quantity: 50 },  
-  { id: 105, name: 'Gaming Mouse', price: 75, quantity: 30 },  
-\];
+These methods help convert between object format (key-value pairs) and array format (lists).
 
-### **The Tasks**
+| Tool | Input Type | Output Type | When to Use It |
+| :---- | :---- | :---- | :---- |
+| **Object.keys()** | Object | Array of strings (keys) | To get a simple list of all **product IDs** (keys) from a stock level map. |
+| **Object.values()** | Object | Array of values | To get a simple list of all **stock counts** (values) from a stock level map. |
+| **Object.entries()** | Object | Array of arrays (pairs) | To convert an object into a structured array, where each element is an array containing \[key, value\]—perfect for data transfer. |
+| **Array.reduce() (as a converter)** | Array | Object | A common way to convert a list of objects (like featureRequests) into a quick-access map (where the key is the ticket ID). |
 
-1. **Calculate Total Inventory Value:** Use the **reduce()** method to find the sum of the **total value** for all products: (price \* quantity).  
-2. **Count Price Categories:** Use the **forEach()** method to iterate over the array and create an object that counts products based on their price: **'Low'** (), **'Medium'** ( and ), **'High'** ().
-
-### **Expected Output**
-
-1. **Total Inventory Value:** 1200\*5 \+ 120\*20 \+ 450\*10 \+ 50\*50 \+ 75\*30 \= 6000 \+ 2400 \+ 4500 \+ 2500 \+ 2250 \= 17650  
-2. **Price Category Counts:**  
-   JavaScript  
-   {  
-     "Low": 2,     // Webcam HD, Gaming Mouse  
-     "Medium": 2,  // Mechanical Keyboard, 4K Monitor  
-     "High": 1     // Laptop Pro  
-   }
-
----
-
-## **🚀 Task 3: Product Configuration and Key Extraction (Destructuring & Spread)**
-
-### **The Scenario**
-
-You are setting up a product configuration page. You need to quickly extract key IDs and the best price options, and merge base product data with its feature list.
-
-### **The Data**
-
-(A new object combining product data for this task.)
-
-const productConfig \= {  
-  productId: 'LAP-PRO-101',  
-  basePrice: 1200,  
-  taxRate: 0.1,  
-  currentPrice: 1080,  
-  features: \['i7 Processor', '16GB RAM', '512GB SSD'\],  
-  variants: \[1080, 999, 1150\]  
-};
-
-### **The Tasks**
-
-1. **Destructure Prices:** Extract **productId**, **currentPrice**, and rename **basePrice** to **MSRP** using **object destructuring**.  
-2. **Destructure Features:** Extract the most important feature (mainFeature) and collect the rest of the features into an array (otherFeatures) using **array destructuring and the rest operator (...)**.  
-3. **Merge Data:** Create a new productSummary object by combining the properties of productConfig with a new inStock property using the **spread operator (...)**.
-
-### **Expected Output**
-
-1. productId: 'LAP-PRO-101'  
-2. MSRP: 1200  
-3. mainFeature: 'i7 Processor'  
-4. otherFeatures: \['16GB RAM', '512GB SSD'\]  
-5. productSummary object:  
-   JavaScript  
-   {  
-     productId: 'LAP-PRO-101',  
-     basePrice: 1200,  
-     taxRate: 0.1,  
-     currentPrice: 1080,  
-     features: \['i7 Processor', '16GB RAM', '512GB SSD'\],  
-     variants: \[1080, 999, 1150\],  
-     inStock: true   
-   }
-
-   (Note: You must define inStock: true while merging).
-
----
-
-## 
-
-## **🔄 Task 4: Prioritization and Mapping (Sort & Array to Object)**
-
-### **The Scenario**
-
-You have a list of new feature requests with their priority levels. You need to sort them for the development team and then convert the list into a quick-access map.
-
-### **The Data**
-
-const featureRequests \= \[  
-  { ticket: 'FEAT-002', description: 'Enable dark mode', priority: 2 },  
-  { ticket: 'FEAT-001', description: 'Add cart persistence', priority: 1 },  
-  { ticket: 'FEAT-004', description: 'Improve search speed', priority: 4 },  
-  { ticket: 'FEAT-003', description: 'Fix checkout bug', priority: 3 }  
-\];
-
-### **The Tasks**
-
-1. **Sort Requests:** Use the **sort()** method to sort the featureRequests array based on the **priority** property, from **lowest** (highest importance) to **highest** (lowest importance).  
-2. **Array to Object Map:** Convert the **sorted** featureRequests array into a new requestMap **object**. The **ticket** IDs should be the **keys** and the **description** should be the **values**.
-
-### **Expected Output**
-
-1. featureRequests (after sorting):  
-   JavaScript  
-   \[  
-     { ticket: 'FEAT-001', description: 'Add cart persistence', priority: 1 },  
-     { ticket: 'FEAT-002', description: 'Enable dark mode', priority: 2 },  
-     { ticket: 'FEAT-003', description: 'Fix checkout bug', priority: 3 },  
-     { ticket: 'FEAT-004', description: 'Improve search speed', priority: 4 }  
-   \]  
-2. requestMap:  
-   JavaScript  
-   {  
-     'FEAT-001': 'Add cart persistence',  
-     'FEAT-002': 'Enable dark mode',  
-     'FEAT-003': 'Fix checkout bug',  
-     'FEAT-004': 'Improve search speed'  
-   }
-
----
-
-## **🔑 Task 5: Inventory Cleanup and Inversion (Object Keys, Values, Entries)**
-
-### **The Scenario**
-
-You have a finalized list of active product IDs and their current stock counts (from an object). You need to generate separate lists for the IDs and the counts, and then prepare the data for transfer by converting it into an array of key/value pairs.
-
-### **The Data**
-
-const finalStockLevels \= {  
-  'LAP-PRO-101': 10,  
-  'KBD-MECH-102': 50,  
-  'MON-4K-103': 25,  
-  'MSE-GAM-105': 80  
-};
-
-### **The Tasks**
-
-1. **Extract IDs:** Use **Object.keys()** to create an array containing only the product IDs (the keys).  
-2. **Extract Counts:** Use **Object.values()** to create an array containing only the stock counts (the values).  
-3. **Object to Array Pairs:** Use **Object.entries()** to convert the finalStockLevels object into an array of arrays (an array of key-value pairs).
-
-### **Expected Output**
-
-1. productIDs: \['LAP-PRO-101', 'KBD-MECH-102', 'MON-4K-103', 'MSE-GAM-105'\]  
-2. stockCounts: \[10, 50, 25, 80\]  
-3. stockEntries:  
-   JavaScript  
-   \[  
-     \['LAP-PRO-101', 10\],  
-     \['KBD-MECH-102', 50\],  
-     \['MON-4K-103', 25\],  
-     \['MSE-GAM-105', 80\]  
-   \]  
