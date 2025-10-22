@@ -15,9 +15,9 @@ The repo begins with static front-end implementation and will gradually expand i
 - Structured the main webpage layout using **HTML5**  
 - Developed responsive design and styling with **CSS3**  
 - Added interactivity and event handling with **JavaScript**  
-- Understood Express Routing
-- Used Node/npm to run and set-up JS
-- Next Step: MongoDB
+- Understood **Express.js** Routing
+- Used **Node.js/npm** to run and set-up JS
+- Next Step: **MongoDB**
 
 ---
 
