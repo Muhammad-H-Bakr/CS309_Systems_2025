@@ -1,6 +1,7 @@
 # **Lab Task: Website Fixes and Feature Enhancements**
 
 ## **Objective**
+
 Resolve existing issues on the website and implement the following new features.
 
 ---

@@ -1,0 +1,13 @@
+const finalStockLevels = {
+  "LAP-PRO-101": 10,
+  "KBD-MECH-102": 50,
+  "MON-4K-103": 25,
+  "MSE-GAM-105": 80,
+};
+
+const keys = Object.keys(finalStockLevels);
+console.log("Product IDs:", keys);
+const values = Object.values(finalStockLevels);
+console.log("Stock Levels:", values);
+const entries = Object.entries(finalStockLevels);
+console.log("Product Stock Entries:", entries);
